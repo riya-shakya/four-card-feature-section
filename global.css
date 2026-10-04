@@ -22,11 +22,12 @@ body {
 }
 
 main {
-  padding: 2rem;
+  max-width: var(--page-width);
+  padding: 3.5rem 2.4rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  gap: 2rem;
+  gap: 4rem;
   align-items: center;
 }
 
@@ -34,18 +35,18 @@ main {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  width: min(100%, 30rem);
+  width: min(100%, 32rem);
 }
 
 .description__headings {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
 }
 
 .description__headings h1 {
   color: var(--heading-color);
   font-size: 1.5rem;
+  letter-spacing: 0.01rem;
 }
 
 .description__first-heading {
@@ -61,11 +62,17 @@ main {
 
   color: var(--text-color);
   font-size: var(--text-font-size);
+  letter-spacing: 0.025rem;
+  line-height: 1.4;
+}
+
+.description p {
+  text-align: center;
 }
 
 .features {
   display: grid;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .features__feature-block {
@@ -81,6 +88,7 @@ main {
   gap: 2rem;
   box-shadow: 0 4px 8px var(--box-shadow-color);
   width: 100%;
+  min-height: 15.625rem;
 }
 
 .features__feature-block--supervisor {
@@ -110,6 +118,11 @@ main {
   font-size: 1.25rem;
 }
 
+.feature-block__text p {
+  font-size: 0.812rem;
+  word-spacing: -2px;
+}
+
 .features__feature-block img {
   display: block;
   margin-left: auto;
@@ -129,10 +142,6 @@ main {
     text-align: center;
   }
 
-  .description p {
-    text-align: center;
-  }
-
   .features__feature-block--supervisor {
     grid-area: supervisor;
   }
@@ -147,7 +156,7 @@ main {
   }
 
   .features {
-    width: min(100%, 950px);
+    width: min(100%, 1100px);
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 1fr);
     gap: 2rem;
@@ -160,16 +169,23 @@ main {
 
   .features__feature-block {
     box-shadow: 0 8px 1.5rem var(--box-shadow-color);
+    padding: 1.5rem 2rem;
   }
 }
 
 @media only screen and (min-width: 1440px) {
-  body {
-    width: var(--page-width);
+  main {
+    padding: 6.25rem 5rem;
+    gap: 5rem;
   }
 
-  main {
-    padding: 5rem;
-    gap: 5rem;
+  .description {
+    gap: 0.5rem;
+  }
+
+  .description__headings h1 {
+    font-size: 2.25rem;
+    letter-spacing: -0.25px;
+    word-spacing: 2.5px;
   }
 }
